@@ -6,7 +6,8 @@ const port = 3000;
 const apiKey = '91d70150326268e00a45ddfd9600c755';  // 替换为你的OpenWeatherMap API密钥
 
 // 允许跨域请求（如前端和后端在不同端口时）
-app.use(express.static('public')); // 提供静态文件（前端HTML、CSS、JS）
+app.use(express.static(__dirname));  // 将根目录作为静态目录
+// app.use(express.static('public')); // 提供静态文件（前端HTML、CSS、JS）
 
 // 天气API请求路由
 app.get('/weather', async (req, res) => {
